@@ -33,6 +33,11 @@ const Navigation = () => {
               Sponsors
             </Link>
           </li>
+          <li>
+            <Link href="/archive" className="hover:text-gold-400 transition-colors">
+              Archive
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
