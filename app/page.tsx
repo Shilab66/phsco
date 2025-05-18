@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { ExternalLink } from "lucide-react"
 
 const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -74,7 +75,9 @@ const testimonials = [
 // Code background component
 const CodeBackground = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden opacity-20"> {/* Increased opacity */}
+    <div className="absolute inset-0 overflow-hidden opacity-20">
+      {" "}
+      {/* Increased opacity */}
       <div className="absolute top-0 left-0 w-full h-full text-[10px] font-mono text-gold-400 whitespace-pre overflow-hidden leading-snug">
         {`// TwoBoots System Utility
 function initializeBootSequence(pairID) {
@@ -161,7 +164,6 @@ const comfortEngine = {
   )
 }
 
-
 export default function Home() {
   return (
     <div className="space-y-12">
@@ -196,12 +198,14 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="flex space-x-4"
               >
-                <Link
-                  href="/register"
-                  className="inline-block bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors text-lg"
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScNG1ff3AOMClKEK3Mjb5_s7bv7g_vWOwWdRv-S6lE-RLPhXA/viewform?usp=dialog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors text-lg"
                 >
-                  Register Now
-                </Link>
+                  Register Now <ExternalLink size={18} />
+                </a>
                 <Link
                   href="/about"
                   className="inline-block bg-gray-800 hover:bg-gray-700 text-gold-400 font-bold py-3 px-6 rounded-lg transition-colors text-lg border border-gold-400/30"

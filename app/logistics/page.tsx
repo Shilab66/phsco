@@ -1,46 +1,82 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Monitor, Wifi, Clock, HelpCircle, Download, MessageSquare, ExternalLink } from "lucide-react"
+
+// Banner component that spans the full width
+const FullWidthBanner = () => {
+  return (
+    <div className="relative w-full h-48 md:h-64 bg-gray-800 overflow-hidden -mt-8 mb-12">
+      {/* Banner background with overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 opacity-90"></div>
+
+      {/* Optional: Pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255, 191, 26, 0.2) 2px, transparent 0)`,
+          backgroundSize: "50px 50px",
+        }}
+      ></div>
+
+      {/* Banner content */}
+      <div className="container mx-auto h-full flex flex-col justify-center items-center px-4 relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-gold-400 mb-2 text-center">
+          PHSCO Virtual Competition 2025
+        </h2>
+        <p className="text-xl text-gray-300 text-center max-w-2xl">
+          Join us online for an exciting mathematical challenge from anywhere in the world
+        </p>
+      </div>
+    </div>
+  )
+}
 
 // Timeline component
 const Timeline = () => {
   const events = [
     {
-      time: "8:00 AM",
-      title: "Event Start",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
       time: "9:00 AM",
-      title: "Opening Session",
-      description: "Ut enim ad minim veniam, quis nostrud exercitation",
+      title: "Virtual Check-in Opens",
+      description: "Log in to the competition platform and verify your credentials",
     },
     {
-      time: "10:30 AM",
-      title: "Session One",
-      description: "Duis aute irure dolor in reprehenderit in voluptate",
+      time: "9:30 AM",
+      title: "Welcome Session",
+      description: "Live-streamed opening remarks and competition instructions",
+    },
+    {
+      time: "10:00 AM",
+      title: "Individual Round Begins",
+      description: "90-minute individual problem solving session",
+    },
+    {
+      time: "11:30 AM",
+      title: "Break",
+      description: "30-minute break before the team round",
     },
     {
       time: "12:00 PM",
-      title: "Lunch Break",
-      description: "Excepteur sint occaecat cupidatat non proident",
+      title: "Team Round Begins",
+      description: "60-minute collaborative problem solving session",
     },
     {
-      time: "1:30 PM",
-      title: "Session Two",
-      description: "Sed ut perspiciatis unde omnis iste natus error",
+      time: "1:00 PM",
+      title: "Lunch Break",
+      description: "60-minute break for lunch",
+    },
+    {
+      time: "2:00 PM",
+      title: "Special Topic Round",
+      description: "45-minute special topic challenge",
     },
     {
       time: "3:00 PM",
-      title: "Networking",
-      description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur",
-    },
-    {
-      time: "4:00 PM",
       title: "Closing Session",
-      description: "Neque porro quisquam est, qui dolorem ipsum quia dolor",
+      description: "Live-streamed closing remarks and preliminary results announcement",
     },
   ]
 
@@ -95,42 +131,74 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
   )
 }
 
+// Technical requirement card
+const RequirementCard = ({
+  icon,
+  title,
+  description,
+}: { icon: React.ReactNode; title: string; description: string }) => {
+  return (
+    <div className="bg-gray-800/60 p-5 rounded-xl border border-gray-700">
+      <div className="w-12 h-12 rounded-full bg-gold-500/20 flex items-center justify-center mb-4">{icon}</div>
+      <h3 className="text-xl font-semibold text-gold-400 mb-2">{title}</h3>
+      <p className="text-gray-300">{description}</p>
+    </div>
+  )
+}
+
 export default function Logistics() {
   const faqs = [
     {
-      question: "Lorem ipsum dolor sit amet?",
+      question: "How do I access the virtual competition platform?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.",
+        "You will receive a unique access link via email 24 hours before the competition starts. Simply click the link and log in with the credentials provided in your registration confirmation.",
     },
     {
-      question: "Consectetur adipiscing elit?",
+      question: "What if I experience technical difficulties during the competition?",
       answer:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "We will have a dedicated technical support team available throughout the competition. You can access the help desk through the competition platform or by emailing support@phsco.example.com.",
     },
     {
-      question: "Sed do eiusmod tempor incididunt?",
+      question: "How will the team round work in a virtual setting?",
       answer:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Team members will be placed in private virtual breakout rooms where they can collaborate. The platform includes a shared whiteboard, text chat, and video conferencing capabilities.",
     },
     {
-      question: "Ut labore et dolore magna aliqua?",
+      question: "Is a webcam required for participation?",
       answer:
-        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+        "Yes, a functioning webcam is required for proctoring purposes. Your face must be visible throughout the competition to ensure academic integrity.",
     },
     {
-      question: "Quis autem vel eum iure reprehenderit?",
+      question: "How will solutions be submitted?",
       answer:
-        "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+        "Solutions can be typed directly into the platform or uploaded as PDF files. Each problem will have clear submission instructions and file size limitations.",
     },
   ]
 
   return (
     <div className="space-y-12">
+      {/* Full-width banner */}
+      <FullWidthBanner />
+
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <h1 className="text-4xl font-bold text-gold-400 mb-4">Event Logistics</h1>
-        <p className="text-xl text-gray-300">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget.
-        </p>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <h1 className="text-4xl font-bold text-gold-400 mb-4">Virtual Competition Logistics</h1>
+            <p className="text-xl text-gray-300">
+              Everything you need to know about participating in our online mathematics competition.
+            </p>
+          </div>
+
+          {/* Registration button */}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScNG1ff3AOMClKEK3Mjb5_s7bv7g_vWOwWdRv-S6lE-RLPhXA/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-8 py-4 bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold rounded-lg transition-colors text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 whitespace-nowrap"
+          >
+            Register Now <ExternalLink size={20} />
+          </a>
+        </div>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -140,7 +208,10 @@ export default function Logistics() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
         >
-          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Event Schedule</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Competition Schedule</h2>
+          <p className="mb-6 text-gray-300">
+            All times are listed in Eastern Standard Time (EST). Please adjust for your local time zone.
+          </p>
           <Timeline />
         </motion.div>
 
@@ -151,27 +222,142 @@ export default function Logistics() {
           className="space-y-6"
         >
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
-            <h2 className="text-2xl font-semibold mb-4 text-gold-300">Location</h2>
-            <div className="aspect-video bg-gray-700 rounded-lg mb-4 overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center bg-gray-700 text-gray-500">
-                [Map Placeholder]
-              </div>
+            <h2 className="text-2xl font-semibold mb-4 text-gold-300">Technical Requirements</h2>
+            <div className="grid gap-4">
+              <RequirementCard
+                icon={<Monitor className="text-gold-400" />}
+                title="Device"
+                description="Computer or laptop with at least a 13-inch screen. Tablets are supported but not recommended."
+              />
+              <RequirementCard
+                icon={<Wifi className="text-gold-400" />}
+                title="Internet"
+                description="Stable broadband connection with minimum 5 Mbps download and 2 Mbps upload speeds."
+              />
+              <RequirementCard
+                icon={<Clock className="text-gold-400" />}
+                title="Browser"
+                description="Latest version of Chrome, Firefox, or Edge. Safari is supported with limitations."
+              />
             </div>
-            <h3 className="font-semibold text-gold-400">Venue Name</h3>
-            <p className="text-gray-300">123 Street Name, City, State 12345</p>
           </div>
 
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
-            <h2 className="text-2xl font-semibold mb-4 text-gold-300">Contact</h2>
-            <p className="mb-2">
-              <span className="text-gold-400">Email:</span> contact@example.com
+            <h2 className="text-2xl font-semibold mb-4 text-gold-300">Contact Support</h2>
+            <p className="mb-4 text-gray-300">
+              Our technical support team will be available throughout the competition to assist with any issues.
             </p>
-            <p>
-              <span className="text-gold-400">Phone:</span> (123) 456-7890
-            </p>
+            <div className="space-y-2">
+              <p>
+                <span className="text-gold-400">Email:</span> support@phsco.example.com
+              </p>
+              <p>
+                <span className="text-gold-400">Live Chat:</span> Available in the competition platform
+              </p>
+              <p>
+                <span className="text-gold-400">Hours:</span> 8:00 AM - 5:00 PM EST on competition day
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="grid md:grid-cols-2 gap-8"
+      >
+        <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Participation Instructions</h2>
+
+          <div className="space-y-6">
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-gold-400 font-bold">1</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">Pre-Competition Setup</h3>
+                <p className="text-gray-300">
+                  Test your equipment and internet connection using our system check tool at least 24 hours before the
+                  competition.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-gold-400 font-bold">2</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">Login Process</h3>
+                <p className="text-gray-300">
+                  Log in 30 minutes before the start time to complete identity verification and environment checks.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-gold-400 font-bold">3</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">During the Competition</h3>
+                <p className="text-gray-300">
+                  Keep your webcam on at all times. Use the built-in calculator and scratch pad tools for your work.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-gold-400 font-bold">4</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">Submission Guidelines</h3>
+                <p className="text-gray-300">
+                  Submit your solutions before the countdown timer ends. Late submissions will not be accepted.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-gray-700">
+            <a href="#" className="flex items-center gap-2 text-gold-400 hover:underline">
+              <Download size={18} />
+              Download detailed participation guide (PDF)
+            </a>
+          </div>
+        </div>
+
+        <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Platform Preview</h2>
+
+          <div className="aspect-video bg-gray-700 rounded-lg mb-6 overflow-hidden">
+            <div className="w-full h-full flex items-center justify-center bg-gray-700 text-gray-500">
+              [Competition Platform Screenshot]
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gray-700/50 p-4 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <MessageSquare size={18} className="text-gold-400" />
+                <h3 className="font-semibold">Team Collaboration</h3>
+              </div>
+              <p className="text-sm text-gray-300">Virtual breakout rooms with whiteboard and chat functionality</p>
+            </div>
+
+            <div className="bg-gray-700/50 p-4 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <HelpCircle size={18} className="text-gold-400" />
+                <h3 className="font-semibold">Help Center</h3>
+              </div>
+              <p className="text-sm text-gray-300">One-click access to technical support and competition rules</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
