@@ -180,7 +180,7 @@ export default function Home() {
                 transition={{ duration: 0.7 }}
               >
                 <div className="inline-block bg-gray-800/80 backdrop-blur-sm px-4 py-1 rounded-full mb-2">
-                  <span className="text-gold-400 font-mono text-sm tracking-wider">SAMPLE EVENT 2025</span>
+                  <span className="text-gold-400 font-mono text-sm tracking-wider">Spring 2025</span>
                 </div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   <span className="text-white">PHS</span>
@@ -207,10 +207,12 @@ export default function Home() {
                   Register Now <ExternalLink size={18} />
                 </a>
                 <Link
-                  href="/about"
+                  href="https://discord.gg/w8vXRGjQKF"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-gray-800 hover:bg-gray-700 text-gold-400 font-bold py-3 px-6 rounded-lg transition-colors text-lg border border-gold-400/30"
                 >
-                  Learn More
+                  Join Discord
                 </Link>
               </motion.div>
             </div>
@@ -223,63 +225,21 @@ export default function Home() {
             >
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-semibold text-gold-300 mb-1">Event Countdown</h2>
-                <p className="text-gray-400">May 15, 2025 • 10:00 AM EST</p>
+                <p className="text-gray-400">June 7, 2025 • 1:00 PM EST</p>
               </div>
-              <CountdownTimer targetDate={new Date("2025-05-15T09:00:00")} />
+              <CountdownTimer targetDate={new Date("2025-06-07T13:00:00")} />
 
+              
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <div className="flex justify-between text-sm text-gray-400">
                   <div>
-                    <div className="text-gold-400 font-bold text-lg">500+</div>
-                    Participants
-                  </div>
-                  <div>
-                    <div className="text-gold-400 font-bold text-lg">50+</div>
-                    Organizations
-                  </div>
-                  <div>
-                    <div className="text-gold-400 font-bold text-lg">$10K</div>
-                    In Prizes
+                    <div className="text-gold-400 font-bold text-lg">Spring 2025 Theme - The Great Heist</div>
+                    Compete solo or team up with a friend and race to crack the fabled vaults of the Cardinal Casino before time runs out!
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gold-300">Event Categories</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {categories.map((category) => (
-            <motion.div
-              key={category.name}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 p-4 rounded-lg text-center"
-            >
-              <div className="text-4xl mb-2 text-gold-400">{category.icon}</div>
-              <div className="font-semibold">{category.name}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gold-300">What People Say</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-800 p-6 rounded-lg"
-            >
-              <p className="text-lg mb-2">"{testimonial.quote}"</p>
-              <p className="text-gold-400 font-semibold">{testimonial.name}</p>
-              <p className="text-sm text-gray-400">{testimonial.school}</p>
-            </motion.div>
-          ))}
         </div>
       </section>
     </div>

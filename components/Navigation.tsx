@@ -27,11 +27,6 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link href="/sponsors" className="hover:text-gold-400 transition-colors">
-                Sponsors
-              </Link>
-            </li>
-            <li>
               <Link href="/archive" className="hover:text-gold-400 transition-colors">
                 Archive
               </Link>

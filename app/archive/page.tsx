@@ -12,7 +12,7 @@ interface Contest {
   problems: {
     id: string // A, B, C, C2, etc.
     title: string
-    difficulty: "Easy" | "Medium" | "Hard" | "Advanced"
+    difficulty: "Basic" | "Easy" | "Medium" | "Hard" | "Expert" | "Advanced"
     problemUrl: string
     solutionUrl: string
   }[]
@@ -22,73 +22,88 @@ export default function Archive() {
   // Sample past contest data
   const pastContests: Contest[] = [
     {
-      year: 2024,
-      name: "PHSCO Spring Competition",
+      year: 2025,
+      name: "PHSCO February 2025",
       problems: [
         {
           id: "A",
-          title: "Ball Stars",
-          difficulty: "Medium",
-          problemUrl: "#",
+          title: "Polly's New Laptop",
+          difficulty: "Basic",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/A",
           solutionUrl: "#",
         },
         {
           id: "B",
-          title: "The One About SMCS Scheduling",
+          title: "Make the Grade",
           difficulty: "Easy",
-          problemUrl: "#",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/B",
           solutionUrl: "#",
         },
         {
           id: "C",
-          title: "Mobile Game Ad Problem",
-          difficulty: "Hard",
-          problemUrl: "#",
+          title: "Magical Mirror",
+          difficulty: "Easy",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/C",
           solutionUrl: "#",
         },
         {
           id: "D",
-          title: "Probability Puzzles",
-          difficulty: "Medium",
-          problemUrl: "#",
-          solutionUrl: "#",
-        },
-      ],
-    },
-    {
-      year: 2023,
-      name: "PHSCO Fall Competition",
-      problems: [
-        {
-          id: "A",
-          title: "Hello World ahh problem",
+          title: "Starr Showdown!",
           difficulty: "Easy",
-          problemUrl: "#",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/D",
           solutionUrl: "#",
         },
         {
-          id: "B",
-          title: "Star Constalations",
-          difficulty: "Hard",
-          problemUrl: "#",
-          solutionUrl: "#",
-        },
-        {
-          id: "C1",
-          title: "Hexadecimals",
+          id: "E",
+          title: "Hexadecimal Hex",
           difficulty: "Medium",
-          problemUrl: "#",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/E",
           solutionUrl: "#",
         },
         {
-          id: "C2",
-          title: "Dartboard",
-          difficulty: "Advanced",
-          problemUrl: "#",
+          id: "F",
+          title: "Blocked Out",
+          difficulty: "Medium",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/F",
+          solutionUrl: "#",
+        },
+        {
+          id: "G",
+          title: "Recursive Dartboard",
+          difficulty: "Hard",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/G",
+          solutionUrl: "#",
+        },
+        {
+          id: "H1",
+          title: "Bitstring Birthday Game (Easy Version)",
+          difficulty: "Medium",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/H1",
+          solutionUrl: "#",
+        },
+        {
+          id: "H2",
+          title: "Bitstring Birthday Game (Hard Version)",
+          difficulty: "Medium",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/H2",
+          solutionUrl: "#",
+        },
+        {
+          id: "I1",
+          title: "High Rollers (Easy Version)",
+          difficulty: "Medium",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/I1",
+          solutionUrl: "#",
+        },
+        {
+          id: "I2",
+          title: "High Rollers (Hard Version)",
+          difficulty: "Hard",
+          problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/I2",
           solutionUrl: "#",
         },
       ],
-    },
+    }
   ]
 
   // Group contests by year
@@ -122,11 +137,15 @@ export default function Archive() {
   // Helper function to get difficulty color
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
+      case "Basic":
+        return "text-blue-400"
       case "Easy":
         return "text-green-400"
       case "Medium":
         return "text-yellow-400"
       case "Hard":
+        return "text-orange-400"
+      case "Expert":
         return "text-red-400"
       case "Advanced":
         return "text-purple-400"
@@ -258,7 +277,7 @@ export default function Archive() {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
       >
-        <h2 className="text-2xl font-semibold text-gold-300 mb-4">Additional Resources</h2>
+        <h2 className="text-2xl font-semibold text-gold-300 mb-4">Additional Practice</h2>
         <p className="text-gray-300 mb-4">
           Looking for more practice materials? Check out these additional resources to help you prepare for future
           competitions.

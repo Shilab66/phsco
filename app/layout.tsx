@@ -9,8 +9,8 @@ import FloatingSymbols from "@/components/FloatingSymbols"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "PHSCO Math Competition",
-  description: "A challenging math competition for bright minds",
+  title: "PHS Computing Olympiad",
+  description: "Register and compete in PHSCO, an exciting 4-hour competition for all skill levels where you program your way through unique, never-seen-before challenges. Can you be the first to crack the vault and code your way to victory?",
     generator: 'v0.dev'
 }
 
