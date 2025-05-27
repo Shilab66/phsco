@@ -51,20 +51,6 @@ const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
   )
 }
 
-const testimonials = [
-  {
-    name: "Alex Chen",
-    school: "Tech University",
-    quote:
-      "PHSCO was an incredible experience! The problems were challenging but fair, and the platform was smooth to use.",
-  },
-  {
-    name: "Sarah Johnson",
-    school: "Code Academy",
-    quote: "Great competition format. I learned so much and had fun competing with my team!",
-  },
-]
-
 // Code background component
 const CodeBackground = () => {
   return (
@@ -231,21 +217,43 @@ export default function Home() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gold-300">What Participants Say</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-800 p-6 rounded-lg"
-            >
-              <p className="text-lg mb-2">"{testimonial.quote}"</p>
-              <p className="text-gold-400 font-semibold">{testimonial.name}</p>
-              <p className="text-sm text-gray-400">{testimonial.school}</p>
-            </motion.div>
-          ))}
+        <h2 className="text-2xl font-semibold text-gold-300">Competition Highlights</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-gray-800 p-6 rounded-lg"
+          >
+            <h3 className="text-xl font-bold text-gold-400 mb-2">HackerRank Platform</h3>
+            <p className="text-gray-300">
+              Compete on the industry-standard HackerRank platform with automatic judging, real-time feedback, and
+              professional contest environment.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-gray-800 p-6 rounded-lg"
+          >
+            <h3 className="text-xl font-bold text-gold-400 mb-2">Team or Solo</h3>
+            <p className="text-gray-300">
+              Compete individually or form a team of up to 2 people. Collaborate and strategize to solve challenging
+              problems together.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-gray-800 p-6 rounded-lg"
+          >
+            <h3 className="text-xl font-bold text-gold-400 mb-2">All Skill Levels</h3>
+            <p className="text-gray-300">
+              Whether you're a beginner or an experienced programmer, there are problems designed for every skill level.
+            </p>
+          </motion.div>
         </div>
       </section>
     </div>

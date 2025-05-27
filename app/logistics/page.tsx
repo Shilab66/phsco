@@ -43,11 +43,6 @@ const Timeline = () => {
       description: "Welcome session and competition overview",
     },
     {
-      time: "12:30 PM",
-      title: "Practice Submission",
-      description: "Test the platform and practice submitting solutions",
-    },
-    {
       time: "1:00 PM",
       title: "Competition Begins",
       description: "3-hour programming competition starts",

@@ -22,8 +22,8 @@ export default function Rules() {
             All are welcome to participate in PHSCO contests. Only pre-college students are eligible for prizes and
             recognition.
           </p>
-          <p>There is not any fee for participation.</p>
-          <p>Only participants registred on time will be able to compete.</p>
+          <p>There is no fee for participation.</p>
+          <p>Only participants registered on time will be able to compete.</p>
         </div>
       </motion.div>
 
@@ -36,14 +36,14 @@ export default function Rules() {
         <h2 className="text-2xl font-semibold mb-6 text-gold-300">Contest Format</h2>
         <div className="space-y-4 text-gray-300">
           <p>
-            This contest about 15-20 problems to which you will submit solution programs in C++, Java, Python, or a
-            related langauge on the HackerRank platform. As long as the HackerRank platform accepts the langauge of your
-            choice, it is acceptable for this contest. There are mutliple pathways to advance thru
+            This contest has about 15-20 problems to which you will submit solution programs in C++, Java, Python, or a
+            related language on the HackerRank platform. As long as the HackerRank platform accepts the language of your
+            choice, it is acceptable for this contest. There are multiple pathways to advance through the competition.
           </p>
           <p>
             All problem statements are intended to be straightforward, with no intentional "hidden tricks". Problems are
             intended to be challenging, so be sure to allocate the right amount of time and spread your team's resources
-            stargtegically.
+            strategically.
           </p>
           <p>
             The contest is 3 contiguous hours in length. When you start the contest, your personal timer starts counting
@@ -123,8 +123,8 @@ export default function Rules() {
           <div>
             <h3 className="text-lg font-semibold text-gold-400 mb-2">What programming languages are supported?</h3>
             <p>
-              C, C++, Java, and Python are recommended for competitive programming due to its speed and extensive
-              library support. Any other lanaguages are allowed as long as HackerRank supports it.
+              C, C++, Java, and Python are recommended for competitive programming due to their speed and extensive
+              library support. Any other languages are allowed as long as HackerRank supports them.
             </p>
           </div>
           <div>
@@ -175,8 +175,7 @@ export default function Rules() {
           <div>
             <h3 className="text-lg font-semibold text-gold-400 mb-2">Is AI allowed?</h3>
             <p>
-              The use of any AI is stricktly prohibited. Any suspected use of AI will lead to imediate
-              disqualifification.
+              The use of any AI is strictly prohibited. Any suspected use of AI will lead to immediate disqualification.
             </p>
           </div>
         </div>
