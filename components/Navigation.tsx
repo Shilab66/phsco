@@ -22,8 +22,8 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-gold-400 transition-colors">
-                About
+              <Link href="/rules" className="hover:text-gold-400 transition-colors">
+                Rules/FAQ
               </Link>
             </li>
             <li>

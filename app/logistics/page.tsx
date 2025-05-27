@@ -2,9 +2,8 @@
 
 import type React from "react"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { ChevronDown, Monitor, Wifi, Clock, HelpCircle, Download, MessageSquare, ExternalLink } from "lucide-react"
+import { Monitor, Wifi, Clock, ExternalLink } from "lucide-react"
 
 // Banner component that spans the full width
 const FullWidthBanner = () => {
@@ -28,7 +27,7 @@ const FullWidthBanner = () => {
           PHSCO Virtual Competition 2025
         </h2>
         <p className="text-xl text-gray-300 text-center max-w-2xl">
-          Join us online for an exciting mathematical challenge from anywhere in the world
+          Join us online for an exciting programming challenge on HackerRank from anywhere in the world
         </p>
       </div>
     </div>
@@ -39,44 +38,29 @@ const FullWidthBanner = () => {
 const Timeline = () => {
   const events = [
     {
-      time: "9:00 AM",
-      title: "Virtual Check-in Opens",
-      description: "Log in to the competition platform and verify your credentials",
-    },
-    {
-      time: "9:30 AM",
-      title: "Welcome Session",
-      description: "Live-streamed opening remarks and competition instructions",
-    },
-    {
-      time: "10:00 AM",
-      title: "Individual Round Begins",
-      description: "90-minute individual problem solving session",
-    },
-    {
-      time: "11:30 AM",
-      title: "Break",
-      description: "30-minute break before the team round",
-    },
-    {
       time: "12:00 PM",
-      title: "Team Round Begins",
-      description: "60-minute collaborative problem solving session",
+      title: "Opening Ceremony",
+      description: "Welcome session and competition overview",
+    },
+    {
+      time: "12:30 PM",
+      title: "Practice Submission",
+      description: "Test the platform and practice submitting solutions",
     },
     {
       time: "1:00 PM",
-      title: "Lunch Break",
-      description: "60-minute break for lunch",
+      title: "Competition Begins",
+      description: "3-hour programming competition starts",
     },
     {
-      time: "2:00 PM",
-      title: "Special Topic Round",
-      description: "45-minute special topic challenge",
+      time: "4:00 PM",
+      title: "Competition Ends",
+      description: "Final submissions due - no late submissions accepted",
     },
     {
-      time: "3:00 PM",
-      title: "Closing Session",
-      description: "Live-streamed closing remarks and preliminary results announcement",
+      time: "5:00 PM",
+      title: "Results & Awards",
+      description: "Final results announcement and awards ceremony",
     },
   ]
 
@@ -110,27 +94,6 @@ const Timeline = () => {
   )
 }
 
-// FAQ Accordion component
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <div className="border-b border-gray-700 last:border-b-0">
-      <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center w-full py-4 text-left">
-        <h3 className="text-lg font-semibold">{question}</h3>
-        <ChevronDown className={`w-5 h-5 text-gold-400 transition-transform ${isOpen ? "transform rotate-180" : ""}`} />
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
-        }`}
-      >
-        <p className="text-gray-300">{answer}</p>
-      </div>
-    </div>
-  )
-}
-
 // Technical requirement card
 const RequirementCard = ({
   icon,
@@ -147,34 +110,6 @@ const RequirementCard = ({
 }
 
 export default function Logistics() {
-  const faqs = [
-    {
-      question: "How do I access the virtual competition platform?",
-      answer:
-        "You will receive a unique access link via email 24 hours before the competition starts. Simply click the link and log in with the credentials provided in your registration confirmation.",
-    },
-    {
-      question: "What if I experience technical difficulties during the competition?",
-      answer:
-        "We will have a dedicated technical support team available throughout the competition. You can access the help desk through the competition platform or by emailing support@phsco.example.com.",
-    },
-    {
-      question: "How will the team round work in a virtual setting?",
-      answer:
-        "Team members will be placed in private virtual breakout rooms where they can collaborate. The platform includes a shared whiteboard, text chat, and video conferencing capabilities.",
-    },
-    {
-      question: "Is a webcam required for participation?",
-      answer:
-        "Yes, a functioning webcam is required for proctoring purposes. Your face must be visible throughout the competition to ensure academic integrity.",
-    },
-    {
-      question: "How will solutions be submitted?",
-      answer:
-        "Solutions can be typed directly into the platform or uploaded as PDF files. Each problem will have clear submission instructions and file size limitations.",
-    },
-  ]
-
   return (
     <div className="space-y-12">
       {/* Full-width banner */}
@@ -185,7 +120,7 @@ export default function Logistics() {
           <div>
             <h1 className="text-4xl font-bold text-gold-400 mb-4">Virtual Competition Logistics</h1>
             <p className="text-xl text-gray-300">
-              Everything you need to know about participating in our online mathematics competition.
+              Everything you need to know about participating in our online programming competition.
             </p>
           </div>
 
@@ -210,7 +145,9 @@ export default function Logistics() {
         >
           <h2 className="text-2xl font-semibold mb-6 text-gold-300">Competition Schedule</h2>
           <p className="mb-6 text-gray-300">
-            All times are listed in Eastern Standard Time (EST). Please adjust for your local time zone.
+            <strong>Date:</strong> June 8th, 2025
+            <br />
+            <strong>Time:</strong> All times listed in Eastern Standard Time (EST)
           </p>
           <Timeline />
         </motion.div>
@@ -237,7 +174,12 @@ export default function Logistics() {
               <RequirementCard
                 icon={<Clock className="text-gold-400" />}
                 title="Browser"
-                description="Latest version of Chrome, Firefox, or Edge. Safari is supported with limitations."
+                description="Latest version of Chrome, Firefox, or Edge for optimal HackerRank experience. Ensure JavaScript is enabled."
+              />
+              <RequirementCard
+                icon={<Monitor className="text-gold-400" />}
+                title="HackerRank Account"
+                description="Contest access will be provided via email. No separate HackerRank account creation required."
               />
             </div>
           </div>
@@ -245,133 +187,40 @@ export default function Logistics() {
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
             <h2 className="text-2xl font-semibold mb-4 text-gold-300">Contact Support</h2>
             <p className="mb-4 text-gray-300">
-              Our technical support team will be available throughout the competition to assist with any issues.
+              Our support team will be available throughout the competition to assist with any issues.
             </p>
-            <div className="space-y-2">
-              <p>
-                <span className="text-gold-400">Email:</span> support@phsco.example.com
-              </p>
-              <p>
-                <span className="text-gold-400">Live Chat:</span> Available in the competition platform
-              </p>
-              <p>
-                <span className="text-gold-400">Hours:</span> 8:00 AM - 5:00 PM EST on competition day
+            <div className="space-y-4">
+              <div>
+                <span className="text-gold-400 font-semibold">Support Form:</span>
+                <br />
+                <a
+                  href="https://forms.gle/HdP28HkeoRZyaCVb7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  https://forms.gle/HdP28HkeoRZyaCVb7
+                </a>
+              </div>
+              <div>
+                <span className="text-gold-400 font-semibold">Discord:</span>
+                <br />
+                <a
+                  href="https://discord.gg/w8vXRGjQKF"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Join our Discord server
+                </a>
+              </div>
+              <p className="text-sm text-gray-400">
+                <span className="text-gold-400">Hours:</span> 12:00 PM - 6:00 PM EST on competition day
               </p>
             </div>
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="grid md:grid-cols-2 gap-8"
-      >
-        <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
-          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Participation Instructions</h2>
-
-          <div className="space-y-6">
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-gold-400 font-bold">1</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">Pre-Competition Setup</h3>
-                <p className="text-gray-300">
-                  Test your equipment and internet connection using our system check tool at least 24 hours before the
-                  competition.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-gold-400 font-bold">2</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">Login Process</h3>
-                <p className="text-gray-300">
-                  Log in 30 minutes before the start time to complete identity verification and environment checks.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-gold-400 font-bold">3</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">During the Competition</h3>
-                <p className="text-gray-300">
-                  Keep your webcam on at all times. Use the built-in calculator and scratch pad tools for your work.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-gold-400 font-bold">4</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">Submission Guidelines</h3>
-                <p className="text-gray-300">
-                  Submit your solutions before the countdown timer ends. Late submissions will not be accepted.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 pt-6 border-t border-gray-700">
-            <a href="#" className="flex items-center gap-2 text-gold-400 hover:underline">
-              <Download size={18} />
-              Download detailed participation guide (PDF)
-            </a>
-          </div>
-        </div>
-
-        <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
-          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Platform Preview</h2>
-
-          <div className="aspect-video bg-gray-700 rounded-lg mb-6 overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center bg-gray-700 text-gray-500">
-              [Competition Platform Screenshot]
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gray-700/50 p-4 rounded-lg">
-              <div className="flex items-center gap-2 mb-2">
-                <MessageSquare size={18} className="text-gold-400" />
-                <h3 className="font-semibold">Team Collaboration</h3>
-              </div>
-              <p className="text-sm text-gray-300">Virtual breakout rooms with whiteboard and chat functionality</p>
-            </div>
-
-            <div className="bg-gray-700/50 p-4 rounded-lg">
-              <div className="flex items-center gap-2 mb-2">
-                <HelpCircle size={18} className="text-gold-400" />
-                <h3 className="font-semibold">Help Center</h3>
-              </div>
-              <p className="text-sm text-gray-300">One-click access to technical support and competition rules</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-      >
-        <h2 className="text-2xl font-semibold mb-6 text-gold-300">Frequently Asked Questions</h2>
-        <div className="divide-y divide-gray-700">
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
-      </motion.div>
     </div>
   )
 }

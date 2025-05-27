@@ -51,24 +51,17 @@ const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
   )
 }
 
-const categories = [
-  { name: "Category 1", icon: "∑" },
-  { name: "Category 2", icon: "△" },
-  { name: "Category 3", icon: "ℕ" },
-  { name: "Category 4", icon: "!" },
-]
-
 const testimonials = [
   {
-    name: "Person Name",
-    school: "Organization Name",
+    name: "Alex Chen",
+    school: "Tech University",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.",
+      "PHSCO was an incredible experience! The problems were challenging but fair, and the platform was smooth to use.",
   },
   {
-    name: "Another Person",
-    school: "Another Organization",
-    quote: "Vestibulum commodo. Ut rhoncus gravida arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Sarah Johnson",
+    school: "Code Academy",
+    quote: "Great competition format. I learned so much and had fun competing with my team!",
   },
 ]
 
@@ -76,89 +69,83 @@ const testimonials = [
 const CodeBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden opacity-20">
-      {" "}
-      {/* Increased opacity */}
       <div className="absolute top-0 left-0 w-full h-full text-[10px] font-mono text-gold-400 whitespace-pre overflow-hidden leading-snug">
-        {`// TwoBoots System Utility
-function initializeBootSequence(pairID) {
-  const leftBoot = calibrateSensor(pairID, "left");
-  const rightBoot = calibrateSensor(pairID, "right");
-
-  const boots = [leftBoot, rightBoot].map((boot) => {
-    boot.status = "active";
-    return optimizeFit(boot);
-  });
-
-  return boots;
+        {`// PHSCO Competition System
+function initializeCompetition(teamID) {
+  const team = validateTeam(teamID);
+  const problems = loadProblemSet();
+  
+  const session = {
+    team: team,
+    problems: problems,
+    startTime: new Date(),
+    submissions: [],
+    score: 0
+  };
+  
+  return session;
 }
 
-class BootManager {
+class CompetitionManager {
   constructor() {
-    this.bootQueue = [];
-    this.defaultSettings = { snugness: 7, archSupport: true };
+    this.teams = [];
+    this.leaderboard = [];
+    this.timeLimit = 3 * 60 * 60 * 1000; // 3 hours
   }
-
-  addBoot(boot) {
-    const preparedBoot = {
-      ...boot,
-      settings: this.defaultSettings,
-      initiatedAt: new Date(),
+  
+  registerTeam(team) {
+    const validatedTeam = {
+      ...team,
+      registeredAt: new Date(),
+      status: "registered"
     };
-    this.bootQueue.push(preparedBoot);
+    this.teams.push(validatedTeam);
   }
-
-  deployAll() {
-    return this.bootQueue.map((b) => deployBoot(b));
+  
+  startCompetition() {
+    return this.teams.map(team => this.initializeSession(team));
   }
-
-  inspect(pairID) {
-    return this.bootQueue.find((b) => b.id === pairID);
+  
+  submitSolution(teamID, problemID, solution) {
+    const team = this.teams.find(t => t.id === teamID);
+    if (!team) return { error: "Team not found" };
+    
+    const result = this.evaluateSolution(solution, problemID);
+    team.submissions.push({
+      problemID,
+      solution,
+      result,
+      timestamp: new Date()
+    });
+    
+    this.updateScore(team, result);
+    return result;
   }
 }
 
-const diagnostics = {
-  checkHeelAlignment(boot) {
-    return boot.alignment === "optimal";
-  },
-  logStatus(boot) {
-    console.log(\`[BootLog] \${boot.id}: \${boot.status}\`);
-  },
-  emergencyOverride(boot) {
-    boot.status = "manual";
-    alert("Boot override initiated!");
-    return boot;
+const judgeSystem = {
+  testCases: new Map(),
+  
+  runTests(solution, problemID) {
+    const tests = this.testCases.get(problemID);
+    let passed = 0;
+    
+    for (const test of tests) {
+      try {
+        const output = solution(test.input);
+        if (output === test.expected) passed++;
+      } catch (error) {
+        console.log("Runtime error:", error);
+      }
+    }
+    
+    return {
+      passed,
+      total: tests.length,
+      score: (passed / tests.length) * 100
+    };
   }
-};
-
-function runTwoBootsProtocol(dataStream) {
-  const manager = new BootManager();
-  dataStream.forEach((bootData) => {
-    manager.addBoot(bootData);
-  });
-
-  const results = manager.deployAll();
-  return results.filter((boot) => diagnostics.checkHeelAlignment(boot));
-}
-
-// Utility tools
-const metrics = {
-  averageLaceTime(boots) {
-    return boots.reduce((sum, b) => sum + b.laceTime, 0) / boots.length;
-  },
-  evaluateSnugIndex(boot) {
-    return Math.min(boot.snugness * 1.5, 10);
-  }
-};
-
-const comfortEngine = {
-  adjustPadding(boot) {
-    boot.paddingLevel += 1;
-    return boot;
-  },
-  detectFrictionZones(boot) {
-    return boot.frictionAreas?.length > 0;
-  }
-};`.repeat(8)}
+};`.repeat(6)}
       </div>
     </div>
   )
@@ -188,7 +175,7 @@ export default function Home() {
                 </h1>
                 <div className="h-1 w-20 bg-gold-400 my-4"></div>
                 <p className="text-xl md:text-2xl text-gray-300 font-mono">
-                  Lorem <span className="text-gold-400">Ipsum</span> Dolor Sit
+                  Programming <span className="text-gold-400">Competition</span> Challenge
                 </p>
               </motion.div>
 
@@ -225,21 +212,40 @@ export default function Home() {
             >
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-semibold text-gold-300 mb-1">Event Countdown</h2>
-                <p className="text-gray-400">June 7, 2025 • 1:00 PM EST</p>
+                <p className="text-gray-400">June 8, 2025 • 1:00 PM EST</p>
               </div>
-              <CountdownTimer targetDate={new Date("2025-06-07T13:00:00")} />
+              <CountdownTimer targetDate={new Date("2025-06-08T13:00:00")} />
 
-              
               <div className="mt-8 pt-6 border-t border-gray-700">
-                <div className="flex justify-between text-sm text-gray-400">
-                  <div>
-                    <div className="text-gold-400 font-bold text-lg">Spring 2025 Theme - The Great Heist</div>
-                    Compete solo or team up with a friend and race to crack the fabled vaults of the Cardinal Casino before time runs out!
-                  </div>
+                <div className="text-center">
+                  <div className="text-gold-400 font-bold text-lg mb-2">Spring 2025 Theme - The Great Heist</div>
+                  <p className="text-gray-300 text-sm">
+                    Compete solo or team up with a friend and race to crack the fabled vaults of the Cardinal Casino
+                    before time runs out!
+                  </p>
                 </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold text-gold-300">What Participants Say</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-gray-800 p-6 rounded-lg"
+            >
+              <p className="text-lg mb-2">"{testimonial.quote}"</p>
+              <p className="text-gold-400 font-semibold">{testimonial.name}</p>
+              <p className="text-sm text-gray-400">{testimonial.school}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
     </div>
