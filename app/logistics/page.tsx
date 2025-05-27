@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { motion } from "framer-motion"
-import { Monitor, Wifi, Clock, ExternalLink } from "lucide-react"
+import { Monitor, Wifi, Clock, ExternalLink, Code } from "lucide-react"
 
 // Banner component that spans the full width
 const FullWidthBanner = () => {
@@ -24,7 +24,7 @@ const FullWidthBanner = () => {
       {/* Banner content */}
       <div className="container mx-auto h-full flex flex-col justify-center items-center px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gold-400 mb-2 text-center">
-          PHSCO Virtual Competition 2025
+          PHS Computing Olympiad - Spring 2025
         </h2>
         <p className="text-xl text-gray-300 text-center max-w-2xl">
           Join us online for an exciting programming challenge on HackerRank from anywhere in the world
@@ -40,22 +40,27 @@ const Timeline = () => {
     {
       time: "12:00 PM",
       title: "Opening Ceremony",
-      description: "Welcome session and competition overview",
+      description: "Join us in the welcome livestream and practice submitting on the HackerRank platform.",
     },
     {
       time: "1:00 PM",
       title: "Competition Begins",
-      description: "3-hour programming competition starts",
+      description: "The problems are revealed and code submissions are opened.",
+    },
+    {
+      time: "3:00 PM",
+      title: "Leaderboard Freezes",
+      description: "Leaderboard frozen until the awards ceremony. Don't give up until the end!",
     },
     {
       time: "4:00 PM",
       title: "Competition Ends",
-      description: "Final submissions due - no late submissions accepted",
+      description: "Code submissions close and final scores are tallied. Keep your email open!",
     },
     {
       time: "5:00 PM",
       title: "Results & Awards",
-      description: "Final results announcement and awards ceremony",
+      description: "Final results are announced & awards are given.",
     },
   ]
 
@@ -94,7 +99,7 @@ const RequirementCard = ({
   icon,
   title,
   description,
-}: { icon: React.ReactNode; title: string; description: string }) => {
+}: { icon: React.ReactNode; title: string; description: React.ReactNode }) => {
   return (
     <div className="bg-gray-800/60 p-5 rounded-xl border border-gray-700">
       <div className="w-12 h-12 rounded-full bg-gold-500/20 flex items-center justify-center mb-4">{icon}</div>
@@ -111,7 +116,7 @@ export default function Logistics() {
       <FullWidthBanner />
 
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mx-4">
           <div>
             <h1 className="text-4xl font-bold text-gold-400 mb-4">Virtual Competition Logistics</h1>
             <p className="text-xl text-gray-300">
@@ -131,52 +136,21 @@ export default function Logistics() {
         </div>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-        >
-          <h2 className="text-2xl font-semibold mb-6 text-gold-300">Competition Schedule</h2>
-          <p className="mb-6 text-gray-300">
-            <strong>Date:</strong> June 8th, 2025
-            <br />
-            <strong>Time:</strong> All times listed in Eastern Standard Time (EST)
-          </p>
-          <Timeline />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
           className="space-y-6"
         >
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
-            <h2 className="text-2xl font-semibold mb-4 text-gold-300">Technical Requirements</h2>
-            <div className="grid gap-4">
-              <RequirementCard
-                icon={<Monitor className="text-gold-400" />}
-                title="Device"
-                description="Computer or laptop with at least a 13-inch screen. Tablets are supported but not recommended."
-              />
-              <RequirementCard
-                icon={<Wifi className="text-gold-400" />}
-                title="Internet"
-                description="Stable broadband connection with minimum 5 Mbps download and 2 Mbps upload speeds."
-              />
-              <RequirementCard
-                icon={<Clock className="text-gold-400" />}
-                title="Browser"
-                description="Latest version of Chrome, Firefox, or Edge for optimal HackerRank experience. Ensure JavaScript is enabled."
-              />
-              <RequirementCard
-                icon={<Monitor className="text-gold-400" />}
-                title="HackerRank Account"
-                description="Contest access will be provided via email. No separate HackerRank account creation required."
-              />
-            </div>
+            <h2 className="text-2xl font-semibold mb-6 text-gold-300">Competition Schedule</h2>
+            <p className="mb-6 text-gray-300">
+              <strong>Date:</strong> June 8th, 2025
+              <br />
+              <strong>Time:</strong> All times listed in Eastern Standard Time (EST)
+            </p>
+            <Timeline />
           </div>
 
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
@@ -184,7 +158,7 @@ export default function Logistics() {
             <p className="mb-4 text-gray-300">
               Our support team will be available throughout the competition to assist with any issues.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
                 <span className="text-gold-400 font-semibold">Support Form:</span>
                 <br />
@@ -210,8 +184,41 @@ export default function Logistics() {
                 </a>
               </div>
               <p className="text-sm text-gray-400">
-                <span className="text-gold-400">Hours:</span> 12:00 PM - 6:00 PM EST on competition day
+                <span className="text-gold-400">We will try to respond to every request we receive within a day, and even faster during competition day.</span>
               </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="space-y-6"
+        >
+          <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+            <h2 className="text-2xl font-semibold mb-10 text-gold-300">Technical Requirements</h2>
+            <div className="grid gap-7">
+              <RequirementCard
+                icon={<Monitor className="text-gold-400" />}
+                title="Device"
+                description="A desktop or laptop computer with access to an IDE (code editor) of your choice is highly recommended. Chromebooks are supported and a web-based IDE will be provided on the competition platform, but it is recommended to use a personal computer if possible."
+              />
+              <RequirementCard
+                icon={<Wifi className="text-gold-400" />}
+                title="Internet"
+                description="An internet connection is required to access the HackerRank platform and submit your solutions. Problems statements will be downloaded onto your computer, so you can continue working in the case of an outage."
+              />
+              <RequirementCard
+                icon={<Monitor className="text-gold-400" />}
+                title="HackerRank Account"
+                description={<>You must register for a personal HackerRank account before the contest begins. Register for a free account at <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.hackerrank.com/dashboard'>https://www.hackerrank.com/dashboard</a>.</>}
+              />
+              <RequirementCard
+                icon={<Code className="text-gold-400" />}
+                title="Supported Languages"
+                description="All problems are solveable in C++, Java, and Python. If you want a language other than these three to be supported, please fill out the support form!"
+              />
             </div>
           </div>
         </motion.div>
