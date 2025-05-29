@@ -56,7 +56,7 @@ const CodeBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden opacity-20">
       <div className="absolute top-0 left-0 w-full h-full text-[10px] font-mono text-gold-400 whitespace-pre overflow-hidden leading-snug">
-        {`// PHSCO Competition System
+        {`
 function initializeCompetition(teamID) {
   const team = validateTeam(teamID);
   const problems = loadProblemSet();
@@ -76,7 +76,7 @@ class CompetitionManager {
   constructor() {
     this.teams = [];
     this.leaderboard = [];
-    this.timeLimit = 3 * 60 * 60 * 1000; // 3 hours
+    this.timeLimit = 4 * 60 * 60 * 1000;
   }
   
   registerTeam(team) {
@@ -152,14 +152,11 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="inline-block bg-gray-800/80 backdrop-blur-sm px-4 py-1 rounded-full mb-2">
+                <div className="inline-block bg-gray-800/80 backdrop-blur-sm px-4 py-1 rounded-full">
                   <span className="text-gold-400 font-mono text-sm tracking-wider">Spring 2025</span>
                 </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  <span className="text-white">PHS</span>
-                  <span className="text-gold-400">CO</span>
-                </h1>
-                <div className="h-1 w-20 bg-gold-400 my-4"></div>
+                <img src="/spring25.svg" width="400"></img>
+                <br></br>
                 <p className="text-xl md:text-2xl text-gray-300 font-mono">
                   Poolesville High School<br></br> <span className="text-gold-400">Computing Olympiad</span>
                 </p>
@@ -240,7 +237,8 @@ export default function Home() {
           >
             <h3 className="text-xl font-bold text-gold-400 mb-2">Go Solo, or Bring a Friend</h3>
             <p className="text-gray-300">
-              Compete individually or partner up with a friend to try to solve as many problems as possible.
+              Participate individually or partner up with a friend to try to solve as many problems as possible in the
+              4-hour competition window.
             </p>
           </motion.div>
           <motion.div
@@ -249,10 +247,11 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-gray-800 p-6 rounded-lg"
           >
-            <h3 className="text-xl font-bold text-gold-400 mb-2">All Skill Levels</h3>
+            <h3 className="text-xl font-bold text-gold-400 mb-2">All Skill Levels, Anywhere</h3>
             <p className="text-gray-300">
               Whether you're new to competitive programming or an experienced programmer,
-              there are problems designed for every skill level.
+              there are problems designed for every skill level. Compete virtually from
+              the comfort of your own home - no travel required!
             </p>
           </motion.div>
         </div>

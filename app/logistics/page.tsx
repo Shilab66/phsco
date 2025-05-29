@@ -49,17 +49,17 @@ const Timeline = () => {
       description: "The problems are revealed and code submissions are opened.",
     },
     {
-      time: "3:00 PM",
+      time: "4:00 PM",
       title: "Leaderboard Freezes",
       description: "Leaderboard frozen until the awards ceremony. Don't give up until the end!",
     },
     {
-      time: "4:00 PM",
+      time: "5:00 PM",
       title: "Competition Ends",
       description: "Code submissions close and final scores are tallied. Keep your email open!",
     },
     {
-      time: "5:00 PM",
+      time: "6:00 PM",
       title: "Results & Awards",
       description: "Final results are announced & awards are given.",
     },

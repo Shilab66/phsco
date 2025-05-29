@@ -37,7 +37,7 @@ export default function Rules() {
         <div className="space-y-4 text-gray-300">
           <p>
             The contest will contain <span className="text-gold-400 font-bold">15-20 programming problems</span> to solve in
-            <span className="text-gold-400 font-bold"> 3 hours</span>. Each problem will present a unique task, and your team 
+            <span className="text-gold-400 font-bold"> 4 hours</span>. Each problem will present a unique task, and your team 
             will need to design and implement a code algorithm to solve the problem. Sample inputs and outputs are provided 
             for each problem to assist with debugging. Solution programs can be written in C++, Java, or Python.
             If you want to use another language that is not listed here, fill out a support form.
