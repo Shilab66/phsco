@@ -155,7 +155,7 @@ export default function Home() {
                 <div className="inline-block bg-gray-800/80 backdrop-blur-sm px-4 py-1 rounded-full">
                   <span className="text-gold-400 font-mono text-sm tracking-wider">Spring 2025</span>
                 </div>
-                <img src="./spring25.svg" width="400"></img>
+                <img src="./spring25.png" width="400"></img>
                 <br></br>
                 <p className="text-xl md:text-2xl text-gray-300 font-mono">
                   Poolesville High School<br></br> <span className="text-gold-400">Computing Olympiad</span>
@@ -225,7 +225,7 @@ export default function Home() {
           >
             <h3 className="text-xl font-bold text-gold-400 mb-2">Reimagined Competitive Format</h3>
             <p className="text-gray-300">
-              With a unique CTF-style format designed to encourage strategic thinking and teamwork,
+              With a unique progression-based format designed to encourage strategic thinking and teamwork,
               each solved problem unravels more of the story and gets you one step closer to the prize.
             </p>
           </motion.div>
