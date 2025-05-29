@@ -161,7 +161,7 @@ export default function Home() {
                 </h1>
                 <div className="h-1 w-20 bg-gold-400 my-4"></div>
                 <p className="text-xl md:text-2xl text-gray-300 font-mono">
-                  Programming <span className="text-gold-400">Competition</span> Challenge
+                  Poolesville High School<br></br> <span className="text-gold-400">Computing Olympiad</span>
                 </p>
               </motion.div>
 
@@ -206,8 +206,9 @@ export default function Home() {
                 <div className="text-center">
                   <div className="text-gold-400 font-bold text-lg mb-2">Spring 2025 Theme - The Great Heist</div>
                   <p className="text-gray-300 text-sm">
-                    Compete solo or team up with a friend and race to crack the fabled vaults of the Cardinal Casino
-                    before time runs out!
+                    After a budgeting mishap, the PHS Computer Team is in crippling debt and (more importantly)
+                    desperately in need of funds for its traditional end-of-year party! Can you use your programming skills
+                    to help crack the fabled vaults of the corrupt Cardinal Casino and save the club?
                   </p>
                 </div>
               </div>
@@ -225,10 +226,10 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="bg-gray-800 p-6 rounded-lg"
           >
-            <h3 className="text-xl font-bold text-gold-400 mb-2">HackerRank Platform</h3>
+            <h3 className="text-xl font-bold text-gold-400 mb-2">Reimagined Competitive Format</h3>
             <p className="text-gray-300">
-              Compete on the industry-standard HackerRank platform with automatic judging, real-time feedback, and
-              professional contest environment.
+              With a unique CTF-style format designed to encourage strategic thinking and teamwork,
+              each solved problem unravels more of the story and gets you one step closer to the prize.
             </p>
           </motion.div>
           <motion.div
@@ -237,10 +238,9 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-gray-800 p-6 rounded-lg"
           >
-            <h3 className="text-xl font-bold text-gold-400 mb-2">Team or Solo</h3>
+            <h3 className="text-xl font-bold text-gold-400 mb-2">Go Solo, or Bring a Friend</h3>
             <p className="text-gray-300">
-              Compete individually or form a team of up to 2 people. Collaborate and strategize to solve challenging
-              problems together.
+              Compete individually or partner up with a friend to try to solve as many problems as possible.
             </p>
           </motion.div>
           <motion.div
@@ -251,7 +251,8 @@ export default function Home() {
           >
             <h3 className="text-xl font-bold text-gold-400 mb-2">All Skill Levels</h3>
             <p className="text-gray-300">
-              Whether you're a beginner or an experienced programmer, there are problems designed for every skill level.
+              Whether you're new to competitive programming or an experienced programmer,
+              there are problems designed for every skill level.
             </p>
           </motion.div>
         </div>

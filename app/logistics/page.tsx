@@ -7,6 +7,7 @@ import { Monitor, Wifi, Terminal, ExternalLink, Code } from "lucide-react"
 
 // Banner component that spans the full width
 const FullWidthBanner = () => {
+  return;
   return (
     <div className="relative w-full h-48 md:h-64 bg-gray-800 overflow-hidden -mt-8 mb-12">
       {/* Banner background with overlay */}
@@ -76,7 +77,7 @@ const Timeline = () => {
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "1000px" }}
             className="flex gap-4"
           >
             <div className="relative">
@@ -120,7 +121,7 @@ export default function Logistics() {
           <div>
             <h1 className="text-4xl font-bold text-gold-400 mb-4">Virtual Competition Logistics</h1>
             <p className="text-xl text-gray-300">
-              Everything you need to know about participating in our online programming competition.
+              Everything you need to know about participating in the Spring 2025 PHS Computing Olympiad.
             </p>
           </div>
 

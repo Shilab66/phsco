@@ -30,77 +30,77 @@ export default function Archive() {
           title: "Polly's New Laptop",
           difficulty: "Basic",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/A",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=2",
         },
         {
           id: "B",
           title: "Make the Grade",
           difficulty: "Easy",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/B",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=3",
         },
         {
           id: "C",
           title: "Magical Mirror",
           difficulty: "Easy",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/C",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=4",
         },
         {
           id: "D",
           title: "Starr Showdown!",
           difficulty: "Easy",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/D",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=5",
         },
         {
           id: "E",
           title: "Hexadecimal Hex",
           difficulty: "Medium",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/E",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=6",
         },
         {
           id: "F",
           title: "Blocked Out",
           difficulty: "Medium",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/F",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=7",
         },
         {
           id: "G",
           title: "Recursive Dartboard",
           difficulty: "Hard",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/G",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=8",
         },
         {
           id: "H1",
           title: "Bitstring Birthday Game (Easy Version)",
           difficulty: "Medium",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/H1",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=9",
         },
         {
           id: "H2",
           title: "Bitstring Birthday Game (Hard Version)",
           difficulty: "Medium",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/H2",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=9",
         },
         {
           id: "I1",
           title: "High Rollers (Easy Version)",
           difficulty: "Medium",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/I1",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=10",
         },
         {
           id: "I2",
           title: "High Rollers (Hard Version)",
           difficulty: "Hard",
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/I2",
-          solutionUrl: "#",
+          solutionUrl: "/winter25_editorials.pdf#page=10",
         },
       ],
     }
@@ -212,7 +212,7 @@ export default function Archive() {
                         }`}
                       >
                         <div className="p-5 pt-0 border-t border-gray-700">
-                          <div className="grid gap-4">
+                          <div className="grid gap-4 mt-4">
                             {contest.problems.map((problem, problemIdx) => (
                               <div
                                 key={problemIdx}
@@ -252,13 +252,9 @@ export default function Archive() {
                             ))}
                           </div>
 
-                          <div className="mt-4 pt-4 border-t border-gray-700 flex justify-between items-center">
+                          {<div className="mt-4 pt-4 border-t border-gray-700 flex justify-between items-center">
                             <span className="text-sm text-gray-400">{contest.problems.length} problems</span>
-                            <Link href="#" className="flex items-center gap-1 text-gold-400 text-sm hover:underline">
-                              View full contest details
-                              <ExternalLink size={14} />
-                            </Link>
-                          </div>
+                          </div>}
                         </div>
                       </div>
                     </motion.div>
@@ -271,6 +267,7 @@ export default function Archive() {
       </div>
 
       {/* Resources section */}
+      {/*
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -317,7 +314,7 @@ export default function Archive() {
             <p className="text-sm text-gray-400">Links to other math competitions and helpful websites</p>
           </Link>
         </div>
-      </motion.div>
+      </motion.div>*/}
     </div>
   )
 }
