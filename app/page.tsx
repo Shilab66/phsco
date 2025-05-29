@@ -155,7 +155,7 @@ export default function Home() {
                 <div className="inline-block bg-gray-800/80 backdrop-blur-sm px-4 py-1 rounded-full">
                   <span className="text-gold-400 font-mono text-sm tracking-wider">Spring 2025</span>
                 </div>
-                <img src="/spring25.svg" width="400"></img>
+                <img src="./spring25.svg" width="400"></img>
                 <br></br>
                 <p className="text-xl md:text-2xl text-gray-300 font-mono">
                   Poolesville High School<br></br> <span className="text-gold-400">Computing Olympiad</span>

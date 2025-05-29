@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Register and compete in PHSCO, an exciting 4-hour competition for all skill levels where you program your way through unique, never-seen-before challenges. Can you be the first to crack the vault and code your way to victory?",
   generator: 'v0.dev',
   icons: {
-    icon: '/spring25_square.ico'
+    icon: './spring25_square.ico'
   }
 }
 
