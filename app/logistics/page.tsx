@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { motion } from "framer-motion"
-import { Monitor, Wifi, Clock, ExternalLink, Code } from "lucide-react"
+import { Monitor, Wifi, Terminal, ExternalLink, Code } from "lucide-react"
 
 // Banner component that spans the full width
 const FullWidthBanner = () => {
@@ -40,7 +40,7 @@ const Timeline = () => {
     {
       time: "12:00 PM",
       title: "Opening Ceremony",
-      description: "Join us in the welcome livestream and practice submitting on the HackerRank platform.",
+      description: "Practice submitting on the HackerRank platform and prepare for the competition.",
     },
     {
       time: "1:00 PM",
@@ -136,7 +136,7 @@ export default function Logistics() {
         </div>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 mx-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -156,7 +156,7 @@ export default function Logistics() {
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
             <h2 className="text-2xl font-semibold mb-4 text-gold-300">Contact Support</h2>
             <p className="mb-4 text-gray-300">
-              Our support team will be available throughout the competition to assist with any issues.
+              Our support team will be available prior to and during the competition to assist with any issues.
             </p>
             <div className="space-y-6">
               <div>
@@ -184,7 +184,7 @@ export default function Logistics() {
                 </a>
               </div>
               <p className="text-sm text-gray-400">
-                <span className="text-gold-400">We will try to respond to every request we receive within a day, and even faster during competition day.</span>
+                We will try to respond to every request we receive within a day; please be patient and do not submit multiple requests for the same issue.
               </p>
             </div>
           </div>
@@ -202,7 +202,12 @@ export default function Logistics() {
               <RequirementCard
                 icon={<Monitor className="text-gold-400" />}
                 title="Device"
-                description="A desktop or laptop computer with access to an IDE (code editor) of your choice is highly recommended. Chromebooks are supported and a web-based IDE will be provided on the competition platform, but it is recommended to use a personal computer if possible."
+                description="A desktop or laptop computer with the ability to access the internet. Chromebooks are supported, but it is recommended to use a Windows/Mac/Linux/etc. if possible."
+              />
+              <RequirementCard
+                icon={<Terminal className="text-gold-400" />}
+                title="Programs"
+                description={<>You can use any* IDE of your choice. You need to be able to open PDFs locally on your device. You will also need to be able to extract .7z archives, either with a program like <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.7-zip.org/'>7-Zip</a> or an online service such as <a className="text-blue-400 hover:text-blue-300 underline" href='https://extract.me/'>https://extract.me/</a>.<br></br><br></br>*Please do not use any web-based IDEs other than the one provided via HackerRank; platforms such as Replit and Ideone make your code publicly visible, which is a rules violation.</>}
               />
               <RequirementCard
                 icon={<Wifi className="text-gold-400" />}
@@ -213,11 +218,6 @@ export default function Logistics() {
                 icon={<Monitor className="text-gold-400" />}
                 title="HackerRank Account"
                 description={<>You must register for a personal HackerRank account before the contest begins. Register for a free account at <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.hackerrank.com/dashboard'>https://www.hackerrank.com/dashboard</a>.</>}
-              />
-              <RequirementCard
-                icon={<Code className="text-gold-400" />}
-                title="Supported Languages"
-                description="All problems are solveable in C++, Java, and Python. If you want a language other than these three to be supported, please fill out the support form!"
               />
             </div>
           </div>
