@@ -50,12 +50,11 @@ export default function Rules() {
             early on in the competition.
           </p>
           <p>
-            When you submit a program on HackerRank, it will automatically be run against a number of test cases, which must all be passed
-            to receive credit. Full feedback on
-            the sample test cases will be provided, but no information on the status of hidden test cases will be provided besides
-            whether your solution passes or fails them. <span className="text-gold-400 font-bold">Hovering over each test case after submission
-            may reveal more information, such as the access code to the next problem if the test case was passed.</span> If you need to view
-            this information again, you can simply view your submission history; resubmission is not needed and will penalize you.
+            When you submit a program on Codeforces, it will automatically be run against a number of test cases, which must all be passed
+            to receive credit. No information on the status of hidden test cases will be provided besides
+            whether your solution passes or fails them. <span className="text-gold-400 font-bold">If you pass all test cases offered by a problem,
+            clicking on your submission details will show checker feedback and reveal any access codes attached to the problem.</span> If
+            you need to view this information again, you can simply view your submission history; resubmission is not needed and will penalize you.
           </p>
           <p>
             Final standings will be calculated using an <span className="text-gold-400 font-bold">ICPC-style leaderboard</span>, with a 20-minute penalty for incorrect submissions (including resubmission after a correct answer).
@@ -67,7 +66,7 @@ export default function Rules() {
             regarding the wording of a problem during the competition, fill out a support form and the organizers will respond
             as quickly as possible (note, however, that you may not get more than a "read carefully" response). In the event that
             a problem statement needs correction, all competitors will be notified via an email, a Discord announcement, and through
-            the HackerRank notification system.
+            the Codeforces notification system.
           </p>
         </div>
       </motion.div>
@@ -106,7 +105,7 @@ export default function Rules() {
               Do not submit code that was not written by you. Plagiarism checks will be run at the end of the contest.
             </li>
             <li>Do not use pre-written code or "templates" to get a head start on your coding. This is at the discretion of the judges; pre-written library imports and shorthand definitions are fine, while a pre-written DFS function is not. Generally, as long as a template doesn't contain any real "logic", you should be fine.</li>
-            <li>Do not use multiple HackerRank accounts.</li>
+            <li>Do not use multiple Codeforces accounts.</li>
             <li>Do not participate in a contest that does not match the division you signed up for. If you accidentally submit for the wrong division, contact support.</li>
             <li>Do not submit any code that behaves in a malicious way towards the grading system.</li>
             <li>Do not intentionally sign up for a lower division than your team's skill level to boost your placement.</li>
@@ -125,9 +124,9 @@ export default function Rules() {
         <h2 className="text-2xl font-semibold mb-6 text-gold-300">Technical Details</h2>
         <div className="space-y-4 text-gray-300">
           <ul className="space-y-2 list-disc list-inside">
-            <li>Programs must compile and run within the time and memory limits specified by HackerRank.</li>
+            <li>Programs must compile and run within the time and memory limits specified by Codeforces.</li>
             <li>
-              C++, Java, and Python are the supported languages.
+              Any languages supported by Codeforces are allowed for submission. Note, however, that problems are only guaranteed to be solvable in C++, Java 21, and Python 3.
             </li>
             <li>Use standard input and output (stdin/stdout) as specified by each problem.</li>
           </ul>

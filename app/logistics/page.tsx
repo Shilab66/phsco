@@ -28,7 +28,7 @@ const FullWidthBanner = () => {
           PHS Computing Olympiad - Spring 2025
         </h2>
         <p className="text-xl text-gray-300 text-center max-w-2xl">
-          Join us online for an exciting programming challenge on HackerRank from anywhere in the world
+          Join us online for an exciting programming challenge on Codeforces from anywhere in the world
         </p>
       </div>
     </div>
@@ -41,7 +41,7 @@ const Timeline = () => {
     {
       time: "12:00 PM",
       title: "Opening Ceremony",
-      description: "Practice submitting on the HackerRank platform and prepare for the competition.",
+      description: "Practice submitting on the Codeforces platform and prepare for the competition.",
     },
     {
       time: "1:00 PM",
@@ -208,17 +208,17 @@ export default function Logistics() {
               <RequirementCard
                 icon={<Terminal className="text-gold-400" />}
                 title="Programs"
-                description={<>You can use any* IDE of your choice. You need to be able to open PDFs locally on your device. You will also need to be able to extract .7z archives, either with a program like <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.7-zip.org/'>7-Zip</a> or an online service such as <a className="text-blue-400 hover:text-blue-300 underline" href='https://extract.me/'>https://extract.me/</a>.<br></br><br></br>*Please do not use any web-based IDEs other than the one provided via HackerRank; platforms such as Replit and Ideone make your code publicly visible, which is a rules violation.</>}
+                description={<>You can use any* IDE of your choice. You need to be able to open PDFs locally on your device. You will also need to be able to extract .7z archives, either with a program like <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.7-zip.org/'>7-Zip</a> or an online service such as <a className="text-blue-400 hover:text-blue-300 underline" href='https://extract.me/'>https://extract.me/</a>.<br></br><br></br>*If you use a web IDE, make sure that your code is not publicly visible. Additionally, please do not use Replit, since it now has in-built AI (which is a rules violation).</>}
               />
               <RequirementCard
                 icon={<Wifi className="text-gold-400" />}
                 title="Internet"
-                description="An internet connection is required to access the HackerRank platform and submit your solutions. Problems statements will be downloaded onto your computer, so you can continue working in the case of an outage."
+                description="An internet connection is required to access the Codeforces platform and submit your solutions. Problems statements will be downloaded onto your computer, so you can continue working in the case of an outage."
               />
               <RequirementCard
                 icon={<Monitor className="text-gold-400" />}
-                title="HackerRank Account"
-                description={<>You must register for a personal HackerRank account before the contest begins. Register for a free account at <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.hackerrank.com/dashboard'>https://www.hackerrank.com/dashboard</a>.</>}
+                title="Codeforces Account"
+                description={<>You must register for a personal Codeforces account before the contest begins. Register for a free account at <a className="text-blue-400 hover:text-blue-300 underline" href='https://codeforces.com'>https://codeforces.com</a>.</>}
               />
             </div>
           </div>
