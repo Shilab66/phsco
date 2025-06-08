@@ -15,16 +15,21 @@ const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = DateTime.now().toUTC()
-      const target = DateTime.fromJSDate(targetDate).toUTC()
-      const diff = target.diff(now, ['days', 'hours', 'minutes', 'seconds']).toObject()
+      const now = new Date()
+      const difference = targetDate.getTime() - now.getTime()
 
-      setTimeLeft({
-        days: Math.floor(diff.days ?? 0),
-        hours: Math.floor(diff.hours ?? 0),
-        minutes: Math.floor(diff.minutes ?? 0),
-        seconds: Math.floor(diff.seconds ?? 0),
-      })
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        clearInterval(interval)
+        return
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24)
+      const minutes = Math.floor((difference / (1000 * 60)) % 60)
+      const seconds = Math.floor((difference / 1000) % 60)
+
+      setTimeLeft({ days, hours, minutes, seconds })
     }, 1000)
 
     return () => clearInterval(interval)
@@ -189,7 +194,7 @@ export default function Home() {
                 <h2 className="text-2xl font-semibold text-gold-300 mb-1">Event Countdown</h2>
                 <p className="text-gray-400">June 8, 2025 • 1:00 PM EST</p>
               </div>
-              <CountdownTimer targetDate={new Date("2025-06-08T13:00:00")} />
+              <CountdownTimer targetDate={new Date('2025-06-08T17:00:00Z')} />
 
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <div className="text-center">
