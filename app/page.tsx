@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ExternalLink } from "lucide-react"
+import { DateTime } from 'luxon'
 
 const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -15,15 +16,16 @@ const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date()
-      const difference = targetDate.getTime() - now.getTime()
+      const now = DateTime.now().toUTC()
+      const target = DateTime.fromJSDate(targetDate).toUTC()
+      const diff = target.diff(now, ['days', 'hours', 'minutes', 'seconds']).toObject()
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24)
-      const minutes = Math.floor((difference / 1000 / 60) % 60)
-      const seconds = Math.floor((difference / 1000) % 60)
-
-      setTimeLeft({ days, hours, minutes, seconds })
+      setTimeLeft({
+        days: Math.floor(diff.days ?? 0),
+        hours: Math.floor(diff.hours ?? 0),
+        minutes: Math.floor(diff.minutes ?? 0),
+        seconds: Math.floor(diff.seconds ?? 0),
+      })
     }, 1000)
 
     return () => clearInterval(interval)
@@ -31,25 +33,16 @@ const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
 
   return (
     <div className="flex justify-center space-x-4 text-2xl font-bold">
-      <div className="text-center">
-        <div className="text-4xl text-gold-400">{timeLeft.days}</div>
-        <div className="text-sm text-gray-400">Days</div>
-      </div>
-      <div className="text-center">
-        <div className="text-4xl text-gold-400">{timeLeft.hours}</div>
-        <div className="text-sm text-gray-400">Hours</div>
-      </div>
-      <div className="text-center">
-        <div className="text-4xl text-gold-400">{timeLeft.minutes}</div>
-        <div className="text-sm text-gray-400">Minutes</div>
-      </div>
-      <div className="text-center">
-        <div className="text-4xl text-gold-400">{timeLeft.seconds}</div>
-        <div className="text-sm text-gray-400">Seconds</div>
-      </div>
+      {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
+        <div key={unit} className="text-center">
+          <div className="text-4xl text-gold-400">{(timeLeft as any)[unit]}</div>
+          <div className="text-sm text-gray-400">{unit.charAt(0).toUpperCase() + unit.slice(1)}</div>
+        </div>
+      ))}
     </div>
   )
 }
+
 
 // Code background component
 const CodeBackground = () => {
