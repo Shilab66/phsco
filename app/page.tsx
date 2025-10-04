@@ -150,7 +150,7 @@ export default function Home() {
                 transition={{ duration: 0.7 }}
               >
                 <div className="inline-block bg-gray-800/80 backdrop-blur-sm px-4 py-1 rounded-full">
-                  <span className="text-gold-400 font-mono text-sm tracking-wider">Spring 2025</span>
+                  <span className="text-gold-400 font-mono text-sm tracking-wider">Fall 2025</span>
                 </div>
                 <img src="./spring25.png" width="400"></img>
                 <br></br>
@@ -166,7 +166,7 @@ export default function Home() {
                 className="flex space-x-4"
               >
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScNG1ff3AOMClKEK3Mjb5_s7bv7g_vWOwWdRv-S6lE-RLPhXA/viewform?usp=dialog"
+                  href="https://forms.gle/2nfa1i9Kz2vobNtr7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors text-lg"
@@ -192,17 +192,18 @@ export default function Home() {
             >
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-semibold text-gold-300 mb-1">Event Countdown</h2>
-                <p className="text-gray-400">June 8, 2025 • 1:00 PM EST</p>
+                <p className="text-gray-400">October 25, 2025 • 1:00 PM EST</p>
               </div>
-              <CountdownTimer targetDate={new Date('2025-06-08T17:00:00Z')} />
+              <CountdownTimer targetDate={new Date('2025-10-25T17:00:00Z')} />
 
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <div className="text-center">
-                  <div className="text-gold-400 font-bold text-lg mb-2">Spring 2025 Theme - The Great Heist</div>
+                  <div className="text-gold-400 font-bold text-lg mb-2">Fall 2025 Theme - PHS's Haunted Halloween</div>
                   <p className="text-gray-300 text-sm">
-                    After a budgeting mishap, the PHS Computer Team is in crippling debt and (more importantly)
-                    desperately in need of funds for its traditional end-of-year party! Can you use your programming skills
-                    to help crack the fabled vaults of the corrupt Cardinal Casino and save the club?
+                    Halloween is right around the corner, and Polly Programmer and her friends are busy both setting up
+                    Poolesville's annual spooky festivities and planning their own fun-filled activities!
+
+                    Can you use your programming skills to help Polly and her friends pull in the biggest candy haul of the year?
                   </p>
                 </div>
               </div>
@@ -220,10 +221,10 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="bg-gray-800 p-6 rounded-lg"
           >
-            <h3 className="text-xl font-bold text-gold-400 mb-2">Reimagined Competitive Format</h3>
+            <h3 className="text-xl font-bold text-gold-400 mb-2">Problem-Solving in Action</h3>
             <p className="text-gray-300">
-              With a unique progression-based format designed to encourage strategic thinking and teamwork,
-              each solved problem unravels more of the story and gets you one step closer to the prize.
+              With never-before seen problems designed to encourage strategic thinking and teamwork,
+              put your problem-solving skills to the test as you solve each problem and climb up the leaderboard and race against the clock.
             </p>
           </motion.div>
           <motion.div

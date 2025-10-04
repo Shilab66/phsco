@@ -34,7 +34,7 @@ const Navigation = () => {
           </ul>
 
           <a
-            href="https://forms.gle/HdP28HkeoRZyaCVb7"
+            href="https://forms.gle/kdoXVi5WTqMtqb9M9"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gold-400 font-bold rounded-lg transition-colors border border-gold-400/30"
@@ -43,7 +43,7 @@ const Navigation = () => {
           </a>
 
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScNG1ff3AOMClKEK3Mjb5_s7bv7g_vWOwWdRv-S6lE-RLPhXA/viewform?usp=dialog"
+            href="https://forms.gle/2nfa1i9Kz2vobNtr7"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 px-4 py-2 bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold rounded-lg transition-colors"

@@ -18,10 +18,13 @@ export default function Rules() {
       >
         <h2 className="text-2xl font-semibold mb-6 text-gold-300">Eligibility and Participation</h2>
         <div className="space-y-4 text-gray-300">
-          <p>All are welcome to participate in PHSCO contests. Only pre-college students are eligible for prizes.</p>
+          <p>
+            All are welcome to participate in PHSCO contests; however, only pre-college students are eligible for division-based placement prizes.
+            A separate prize is given to the top participant across all contestants, if applicable to the contest.
+          </p>
           <p>There is <span className="text-gold-400 font-bold">no fee</span> for participation.</p>
           <p>You can choose to participate <span className="text-gold-400 font-bold">alone</span> or <span className="text-gold-400 font-bold">with a partner</span>.
-          If you win as a team, prize money will be split between both competitors in the team.
+          If you win as a team, prize money will be <span className="text-gold-400 font-bold">split</span> between both competitors in the team.
           </p>
           <p>Only participants registered on time will be able to compete.</p>
         </div>
@@ -36,25 +39,15 @@ export default function Rules() {
         <h2 className="text-2xl font-semibold mb-6 text-gold-300">Contest Format</h2>
         <div className="space-y-4 text-gray-300">
           <p>
-            The contest will contain <span className="text-gold-400 font-bold">15-20 programming problems</span> to solve in
+            The contest will contain roughly <span className="text-gold-400 font-bold">10-15 programming problems</span> to solve in
             <span className="text-gold-400 font-bold"> 4 hours</span>. Each problem will present a unique task, and your team 
             will need to design and implement a code algorithm to solve the problem. Sample inputs and outputs are provided 
-            for each problem to assist with debugging. Solution programs can be written in C++, Java, or Python.
-            If you want to use another language that is not listed here, fill out a support form.
-          </p>
-          <p>
-            <span className="text-gold-400 font-bold">Only a select few problems will be available at the start of the contest. 
-            More problems will be revealed as your team completes problems and submits correct solutions.</span> Each problem is
-            weighted equally, but note that some problems effectively become more "valuable" by locking further progression in the contest
-            behind their completion. A diagram of all problems in the contest and how to unlock their statements will be given
-            early on in the competition.
+            for each problem to assist with debugging. Solution programs can be written in any program supported by Codeforces.
           </p>
           <p>
             When you submit a program on Codeforces, it will automatically be run against a number of test cases, which must all be passed
-            to receive credit. No information on the status of hidden test cases will be provided besides
-            whether your solution passes or fails them. <span className="text-gold-400 font-bold">If you pass all test cases offered by a problem,
-            clicking on your submission details will show checker feedback and reveal any access codes attached to the problem.</span> If
-            you need to view this information again, you can simply view your submission history; resubmission is not needed and will penalize you.
+            to receive credit. No information on the status of hidden test cases will be provided besides the verdict received by your program
+            (Accepted, Wrong Answer, Time Limit Exceeded, etc.).
           </p>
           <p>
             Final standings will be calculated using an <span className="text-gold-400 font-bold">ICPC-style leaderboard</span>, with a 20-minute penalty for incorrect submissions (including resubmission after a correct answer).
@@ -65,7 +58,7 @@ export default function Rules() {
             All problem statements are intended to be straightforward, with no intentional "hidden tricks". If you have a question
             regarding the wording of a problem during the competition, fill out a support form and the organizers will respond
             as quickly as possible (note, however, that you may not get more than a "read carefully" response). In the event that
-            a problem statement needs correction, all competitors will be notified via an email, a Discord announcement, and through
+            a problem statement needs correction, all competitors will be notified via a Discord announcement and through
             the Codeforces notification system.
           </p>
         </div>
@@ -83,6 +76,9 @@ export default function Rules() {
             PHSCO believes strongly in academic integrity. Participants who violate any of the policies below will be
             disqualified from the competition.
           </p>
+          <p>
+            <em>The following rules are more or less the same as the standard rules for rated Codeforces rounds.</em>
+          </p>
           <ul className="space-y-2 list-disc list-inside">
             <li>
               Work by yourself if competing individually, or only with your registered teammate if competing as a team.
@@ -98,13 +94,12 @@ export default function Rules() {
               Do not share any technical information or code pertaining to the contest while it is actively running.
             </li>
             <li>
-              You may only consult resources that provide information about basic functionality of your programming
-              language (e.g., syntax, library functions, input/output, etc.).
+              You may consult resources on the internet, but you may not actively post questions on a forum-style website. If you use or copy
+              code from a public source on the internet, please, credit it in the comments!
             </li>
             <li>
               Do not submit code that was not written by you. Plagiarism checks will be run at the end of the contest.
             </li>
-            <li>Do not use pre-written code or "templates" to get a head start on your coding. This is at the discretion of the judges; pre-written library imports and shorthand definitions are fine, while a pre-written DFS function is not. Generally, as long as a template doesn't contain any real "logic", you should be fine.</li>
             <li>Do not use multiple Codeforces accounts.</li>
             <li>Do not participate in a contest that does not match the division you signed up for. If you accidentally submit for the wrong division, contact support.</li>
             <li>Do not submit any code that behaves in a malicious way towards the grading system.</li>
@@ -154,8 +149,7 @@ export default function Rules() {
             <h3 className="text-lg font-semibold text-gold-400 mb-2">What resources can I use?</h3>
             <p>
               You are allowed to consult reference books and materials, such as language documentation and websites like w3schools.
-              However, any code you submit must be written by your team. Pasting large code snippets from online sources is disallowed.
-              You cannot use pre-written code or "templates" to get a head start on your coding (refer to the contest rules for more details).
+              Pasting large code snippets from publicly available online sources is allowed, but please credit the source if you do so!
               Additionally, you are not allowed to consult online forums such as StackOverflow and/or post questions regarding the competition while it is running.
             </p>
           </div>
@@ -184,7 +178,7 @@ export default function Rules() {
             <p>
               Contact our support team immediately via our{" "}
               <a
-                href="https://forms.gle/HdP28HkeoRZyaCVb7"
+                href="https://forms.gle/PJC1RCrydq4DFjmu6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold-400 hover:text-gold-300 underline"

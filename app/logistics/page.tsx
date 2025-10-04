@@ -121,16 +121,16 @@ export default function Logistics() {
           <div>
             <h1 className="text-4xl font-bold text-gold-400 mb-4">Virtual Competition Logistics</h1>
             <p className="text-xl text-gray-300">
-              Everything you need to know about participating in the Spring 2025 PHS Computing Olympiad.
+              Everything you need to know about participating in the Fall 2025 PHS Computing Olympiad.
             </p>
           </div>
 
           {/* Registration button */}
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScNG1ff3AOMClKEK3Mjb5_s7bv7g_vWOwWdRv-S6lE-RLPhXA/viewform?usp=dialog"
+            href="https://forms.gle/1yo5gBgvZj47GdMr8"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold rounded-lg transition-colors text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 whitespace-nowrap"
+            className="flex items-center justify-center gap-2 px-8 py-4 bg-gold-500 hover:bg-gold-600 text-gray-900 font-bold rounded-lg transition-colors text-lg shadow-lg hover:shadow-xl whitespace-nowrap"
           >
             Register Now <ExternalLink size={20} />
           </a>
@@ -147,7 +147,7 @@ export default function Logistics() {
           <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
             <h2 className="text-2xl font-semibold mb-6 text-gold-300">Competition Schedule</h2>
             <p className="mb-6 text-gray-300">
-              <strong>Date:</strong> June 8th, 2025
+              <strong>Date:</strong> October 25th, 2025
               <br />
               <strong>Time:</strong> All times listed in Eastern Standard Time (EST)
             </p>
@@ -164,12 +164,12 @@ export default function Logistics() {
                 <span className="text-gold-400 font-semibold">Support Form:</span>
                 <br />
                 <a
-                  href="https://forms.gle/HdP28HkeoRZyaCVb7"
+                  href="https://forms.gle/L486cXUUTZ72zzaM7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 underline"
                 >
-                  https://forms.gle/HdP28HkeoRZyaCVb7
+                  https://forms.gle/L486cXUUTZ72zzaM7
                 </a>
               </div>
               <div>
@@ -208,12 +208,12 @@ export default function Logistics() {
               <RequirementCard
                 icon={<Terminal className="text-gold-400" />}
                 title="Programs"
-                description={<>You can use any* IDE of your choice. You need to be able to open PDFs locally on your device. You will also need to be able to extract .7z archives, either with a program like <a className="text-blue-400 hover:text-blue-300 underline" href='https://www.7-zip.org/'>7-Zip</a> or an online service such as <a className="text-blue-400 hover:text-blue-300 underline" href='https://extract.me/'>https://extract.me/</a>.<br></br><br></br>*If you use a web IDE, make sure that your code is not publicly visible. Additionally, please do not use Replit, since it now has in-built AI (which is a rules violation).</>}
+                description={<>You can use any* IDE of your choice. <br></br><br></br>*If you need to use a web IDE, please use <a className="text-blue-400 hover:text-blue-300 underline" href="https://ide.usaco.guide/">https://ide.usaco.guide/</a>! Other platforms may publicly release your code or have integrated AI assistants, both of which are rules violations.</>}
               />
               <RequirementCard
                 icon={<Wifi className="text-gold-400" />}
                 title="Internet"
-                description="An internet connection is required to access the Codeforces platform and submit your solutions. Problems statements will be downloaded onto your computer, so you can continue working in the case of an outage."
+                description="An internet connection is required to access the Codeforces platform and submit your solutions."
               />
               <RequirementCard
                 icon={<Monitor className="text-gold-400" />}
