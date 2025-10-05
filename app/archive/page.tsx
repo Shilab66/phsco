@@ -12,7 +12,7 @@ interface Contest {
   problems: {
     id: string // A, B, C, C2, etc.
     title: string
-    difficulty: "Basic" | "Easy" | "Medium" | "Hard" | "Expert" | "Advanced"
+    difficulty: number
     problemUrl: string
     solutionUrl: string
   }[]
@@ -23,87 +23,240 @@ export default function Archive() {
   const pastContests: Contest[] = [
     {
       year: 2025,
-      name: "PHSCO February 2025",
+      name: "PHSCO Spring 2025 (Advanced Division)",
+      problems: [
+        {
+          id: "A",
+          title: "Blueprint Printer",
+          difficulty: 800,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/A",
+          solutionUrl: "",
+        },
+        {
+          id: "B2",
+          title: "Disguises",
+          difficulty: 800,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/B2",
+          solutionUrl: "",
+        },
+        {
+          id: "C2",
+          title: "Tuned Transmissions",
+          difficulty: 1000,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/C2",
+          solutionUrl: "",
+        },
+        {
+          id: "D2",
+          title: "Reciprocal Roulette",
+          difficulty: 1000,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/D2",
+          solutionUrl: "",
+        },
+        {
+          id: "E2",
+          title: "Slot Machines",
+          difficulty: 1000,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/E2",
+          solutionUrl: "",
+        },
+        {
+          id: "F2",
+          title: "The Cardinal Quest",
+          difficulty: 1400,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/F2",
+          solutionUrl: "",
+        },
+        {
+          id: "G2",
+          title: "Security Backdoor",
+          difficulty: 1500,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/G2",
+          solutionUrl: "",
+        },
+        {
+          id: "I2",
+          title: "Camera Commands",
+          difficulty: 1700,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/I2",
+          solutionUrl: "",
+        },
+        {
+          id: "J2",
+          title: "Cardinal Credit Fraud",
+          difficulty: 1700,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/J2",
+          solutionUrl: "",
+        },
+        {
+          id: "K2",
+          title: "Recombinant Lock",
+          difficulty: 1900,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614040/problem/K2",
+          solutionUrl: "",
+        },
+      ],
+    },
+    {
+      year: 2025,
+      name: "PHSCO Spring 2025 (Standard Division)",
+      problems: [
+        {
+          id: "A",
+          title: "Blueprint Printer",
+          difficulty: 800,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/A",
+          solutionUrl: "",
+        },
+        {
+          id: "B1",
+          title: "Disguises",
+          difficulty: 800,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/B1",
+          solutionUrl: "",
+        },
+        {
+          id: "C1",
+          title: "Tuned Transmissions",
+          difficulty: 800,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/C1",
+          solutionUrl: "",
+        },
+        {
+          id: "D1",
+          title: "Reciprocal Roulette",
+          difficulty: 800,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/D1",
+          solutionUrl: "",
+        },
+        {
+          id: "E1",
+          title: "Slot Machines",
+          difficulty: 1000,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/E1",
+          solutionUrl: "",
+        },
+        {
+          id: "F1",
+          title: "The Cardinal Quest",
+          difficulty: 1000,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/F1",
+          solutionUrl: "",
+        },
+        {
+          id: "G1",
+          title: "Security Backdoor",
+          difficulty: 1000,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/G1",
+          solutionUrl: "",
+        },
+        {
+          id: "I1",
+          title: "Camera Commands",
+          difficulty: 1200,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/I1",
+          solutionUrl: "",
+        },
+        {
+          id: "J1",
+          title: "Cardinal Credit Fraud",
+          difficulty: 1300,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/J1",
+          solutionUrl: "",
+        },
+        {
+          id: "K1",
+          title: "Recombinant Lock",
+          difficulty: 1200,
+          problemUrl: "https://codeforces.com/group/o620CviPDC/contest/614038/problem/K1",
+          solutionUrl: "",
+        },
+      ],
+    },
+
+    {
+      year: 2025,
+      name: "PHSCO Winter 2025",
       problems: [
         {
           id: "A",
           title: "Polly's New Laptop",
-          difficulty: "Basic",
+          difficulty: 800,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/A",
           solutionUrl: "./winter25_editorials.pdf#page=2",
         },
         {
           id: "B",
           title: "Make the Grade",
-          difficulty: "Easy",
+          difficulty: 800,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/B",
           solutionUrl: "./winter25_editorials.pdf#page=3",
         },
         {
           id: "C",
           title: "Magical Mirror",
-          difficulty: "Easy",
+          difficulty: 800,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/C",
           solutionUrl: "./winter25_editorials.pdf#page=4",
         },
         {
           id: "D",
           title: "Starr Showdown!",
-          difficulty: "Easy",
+          difficulty: 800,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/D",
           solutionUrl: "./winter25_editorials.pdf#page=5",
         },
         {
           id: "E",
           title: "Hexadecimal Hex",
-          difficulty: "Medium",
+          difficulty: 1000,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/E",
           solutionUrl: "./winter25_editorials.pdf#page=6",
         },
         {
           id: "F",
           title: "Blocked Out",
-          difficulty: "Medium",
+          difficulty: 1100,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/F",
           solutionUrl: "./winter25_editorials.pdf#page=7",
         },
         {
           id: "G",
           title: "Recursive Dartboard",
-          difficulty: "Hard",
+          difficulty: 1200,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/G",
           solutionUrl: "./winter25_editorials.pdf#page=8",
         },
         {
           id: "H1",
           title: "Bitstring Birthday Game (Easy Version)",
-          difficulty: "Medium",
+          difficulty: 1200,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/H1",
           solutionUrl: "./winter25_editorials.pdf#page=9",
         },
         {
           id: "H2",
           title: "Bitstring Birthday Game (Hard Version)",
-          difficulty: "Medium",
+          difficulty: 1200,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/H2",
           solutionUrl: "./winter25_editorials.pdf#page=9",
         },
         {
           id: "I1",
           title: "High Rollers (Easy Version)",
-          difficulty: "Medium",
+          difficulty: 1300,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/I1",
           solutionUrl: "./winter25_editorials.pdf#page=10",
         },
         {
           id: "I2",
           title: "High Rollers (Hard Version)",
-          difficulty: "Hard",
+          difficulty: 1400,
           problemUrl: "https://codeforces.com/group/nxOH2ImmkR/contest/583932/problem/I2",
           solutionUrl: "./winter25_editorials.pdf#page=10",
         },
       ],
-    }
+    },
   ]
 
   // Group contests by year
@@ -135,23 +288,13 @@ export default function Archive() {
   }
 
   // Helper function to get difficulty color
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case "Basic":
-        return "text-blue-400"
-      case "Easy":
-        return "text-green-400"
-      case "Medium":
-        return "text-yellow-400"
-      case "Hard":
-        return "text-orange-400"
-      case "Expert":
-        return "text-red-400"
-      case "Advanced":
-        return "text-purple-400"
-      default:
-        return "text-gray-400"
-    }
+  const getDifficultyColor = (difficulty: number) => {
+    if (difficulty < 1200) return "text-blue-400"
+    if (difficulty < 1400) return "text-green-400"
+    if (difficulty < 1600) return "text-yellow-400"
+    if (difficulty < 1900) return "text-orange-400"
+    if (difficulty < 2100) return "text-red-400"
+    return "text-purple-400"
   }
 
   return (
@@ -159,7 +302,9 @@ export default function Archive() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <h1 className="text-4xl font-bold text-gold-400 mb-4">Contest Archive</h1>
         <p className="text-xl text-gray-300">
-          Browse through our past competitions, problems, and solutions. A valuable resource for practice and learning.
+          Browse through our past competitions, problems, and solutions!
+          <br></br>
+          <em>(Disclaimer: Difficulties correspond to a rough Codeforces rating and are subjective; as such, they may not be fully accurate.)</em>
         </p>
       </motion.div>
 
@@ -240,13 +385,24 @@ export default function Archive() {
                                     <FileText size={16} />
                                     Problem
                                   </Link>
-                                  <Link
-                                    href={problem.solutionUrl}
-                                    className="flex items-center gap-1 px-3 py-1.5 bg-gold-500/20 hover:bg-gold-500/30 text-gold-300 rounded-md text-sm transition-colors"
-                                  >
-                                    <BookOpen size={16} />
-                                    Solution
-                                  </Link>
+                                  {problem.solutionUrl && (
+                                    <Link
+                                      href={problem.solutionUrl}
+                                      className="flex items-center gap-1 px-3 py-1.5 bg-gold-500/20 hover:bg-gold-500/30 text-gold-300 rounded-md text-sm transition-colors"
+                                    >
+                                      <BookOpen size={16} />
+                                      Solution
+                                    </Link>
+                                  )}
+                                  {!problem.solutionUrl && (
+                                    <Link
+                                      href={""}
+                                      className="flex items-center gap-1 px-3 py-1.5 bg-gray-800/20 text-gray-500 select-none cursor-not-allowed pointer-events-none rounded-md text-sm transition-colors"
+                                    >
+                                      <BookOpen size={16} />
+                                      Unavailable
+                                    </Link>
+                                  )}
                                 </div>
                               </div>
                             ))}
