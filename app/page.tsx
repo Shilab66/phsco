@@ -207,6 +207,19 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-700">
+                <div className="text-center">
+                  <div className="text-gold-400 font-bold text-lg mb-2">Prize Distribution</div>
+                  <p className="text-gray-300 text-sm">
+                    Standard Division Podium: $40, $30, $20
+                    <br></br>
+                    Advanced Division Podium (Pre-College): $60, $40, $30
+                    <br></br>
+                    Advanced Division Podium (Global): $25, $15, $10
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
